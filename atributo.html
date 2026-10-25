@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="elem" data-widget-name="menu">
+    Menú principal
+</div>
+
+<script>
+
+let elem = document.getElementById("elem");
+
+let valor = elem.getAttribute("data-widget-name");
+
+document.body.innerHTML += "<p>" + valor + "</p>";
+
+</script>
+
+</body>
+</html>

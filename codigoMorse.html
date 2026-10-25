@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+const morse = {
+A: ".-",
+B: "-...",
+C: "-.-.",
+D: "-..",
+E: ".",
+F: "..-.",
+G: "--.",
+H: "....",
+I: "..",
+J: ".---",
+K: "-.-",
+L: ".-..",
+M: "--",
+N: "-.",
+O: "---",
+P: ".--.",
+Q: "--.-",
+R: ".-.",
+S: "...",
+T: "-",
+U: "..-",
+V: "...-",
+W: ".--",
+X: "-..-",
+Y: "-.--",
+Z: "--.."
+};
+
+let texto = prompt("Introduce texto o morse");
+
+if(texto.includes(".") || texto.includes("-"))
+{
+    let resultado = "";
+
+    let letras = texto.split(" ");
+
+    for(let codigo of letras)
+    {
+        for(let letra in morse)
+        {
+            if(morse[letra] === codigo)
+            {
+                resultado += letra;
+            }
+        }
+    }
+
+    document.body.innerHTML = resultado;
+}
+else
+{
+    texto = texto.toUpperCase();
+
+    let resultado = "";
+
+    for(let letra of texto)
+    {
+        if(morse[letra])
+        {
+            resultado += morse[letra] + " ";
+        }
+    }
+
+    document.body.innerHTML = resultado;
+}
+
+</script>
+
+</body>
+</html>

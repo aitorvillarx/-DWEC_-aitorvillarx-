@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="number" id="numero">
+<button onclick="mostrarPrimos()">Mostrar</button>
+
+<table border="1" id="tabla">
+</table>
+
+<script>
+
+function mostrarPrimos()
+{
+    let numero =
+        parseInt(document.getElementById("numero").value);
+
+    let tabla =
+        document.getElementById("tabla");
+
+    tabla.innerHTML = "";
+
+    let fila = "<tr>";
+
+    for(let i=1; i<=numero; i++)
+    {
+        if(esPrimo(i))
+        {
+            fila += "<td>" + i + "</td>";
+        }
+    }
+
+    fila += "</tr>";
+
+    tabla.innerHTML = fila;
+}
+
+function esPrimo(num)
+{
+    if(num === 1)
+    {
+        return true;
+    }
+
+    for(let i=2; i<num; i++)
+    {
+        if(num % i === 0)
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+</script>
+
+</body>
+</html>

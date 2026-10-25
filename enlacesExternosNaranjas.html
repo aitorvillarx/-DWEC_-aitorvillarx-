@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enlaces externos</title>
+</head>
+<body>
+
+<a href="http://google.com">Google</a><br>
+<a href="/tutorial.html">Tutorial</a><br>
+<a href="local/path">Local</a><br>
+<a href="ftp://ftp.com/archivo.zip">FTP</a><br>
+<a href="http://nodejs.org">NodeJS</a>
+
+<script>
+
+let enlaces = document.querySelectorAll("a");
+
+for(let i = 0; i < enlaces.length; i++) {
+
+    let href = enlaces[i].getAttribute("href");
+
+    if(href.includes("://")) {
+        enlaces[i].style.color = "orange";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
